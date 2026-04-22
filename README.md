@@ -2,7 +2,9 @@
 The trained model (Random Forest classifier) is served via a Flask REST API that allows real-time and batch predictions.
 The API is designed for production-style deployment using Docker and is hosted on a cloud platform for public access.
 
+
 **Live URL:** https://data-6545-hw4-mlops-api.onrender.com/
+
 
 **API Endpoints:**
 
@@ -60,6 +62,7 @@ The API is designed for production-style deployment using Docker and is hosted o
       ]
     }
 
+
 **Expected Model Schema:**
 
     "delivery_days": (int, float), [0 : 209]
@@ -74,22 +77,27 @@ The API is designed for production-style deployment using Docker and is hosted o
     "product_volume_cm^3": (int, float), [168 : 296208]
     "total_order_value": (int, float), [0.85 : 13440]
 
+
 **Local Setup Instructions:**
 
   Without Docker:
+  
     1. Install dependencies (pip install -r requirements.txt)
     2. Run Flask API (python app.py)
     3. Test API locally (python test_api.py)
 
   With Docker:
+  
     1. Build image (docker build -t hw4-api)
     2. Run container (docker run -p 5000:5000 hw4.api)
+
 
 **Model Information:**
 
   Model type: Random Forest Classifier (balanced version trained in HW2 assignment)
 
   Key features:
+  
     - Delivery time features
     - Price/freight values
     - Product categories
@@ -97,6 +105,7 @@ The API is designed for production-style deployment using Docker and is hosted o
     - Customer/seller locations and distances
 
   Key performance metrics: 
+  
     - Accuracy: 0.853
     - Precision: 0.85
     - Recall: 0.981
